@@ -1,0 +1,181 @@
+/*
+* Scut, a collection of Sass utilities
+* to ease and improve our implementations of common style-code patterns.
+* v1.0.1
+* Docs at http://davidtheclark.github.io/scut
+*/
+/* line 20, style.scss */
+html {
+  box-sizing: border-box;
+}
+
+/* line 23, style.scss */
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* line 27, style.scss */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #1F5673;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+/* line 35, style.scss */
+h1 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 2.618em;
+}
+
+/* line 40, style.scss */
+header {
+  display: block;
+  background: #14384b;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  padding: 1em;
+}
+/* line 45, style.scss */
+header h1 {
+  margin: 0;
+  color: white;
+}
+/* line 49, style.scss */
+header small {
+  font-size: 0.5em;
+}
+@media all and (max-width: 700px) {
+  /* line 49, style.scss */
+  header small {
+    display: block;
+  }
+}
+/* line 55, style.scss */
+header a {
+  color: white;
+  text-decoration: none;
+  transition: color 1s;
+}
+/* line 59, style.scss */
+header a:hover {
+  color: #a9d2e8;
+}
+
+/* line 65, style.scss */
+#github {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+}
+@media all and (max-width: 1400px) {
+  /* line 65, style.scss */
+  #github {
+    display: none;
+  }
+}
+
+/* line 75, style.scss */
+section {
+  display: block;
+  position: absolute;
+  width: 100%;
+  transition: opacity 1s;
+}
+/* line 79, style.scss */
+section .description {
+  padding: 1em;
+  margin: auto;
+  max-width: 1213.5px;
+}
+/* line 85, style.scss */
+section:not(.active) {
+  opacity: 0;
+}
+
+/* line 90, style.scss */
+canvas {
+  display: block;
+  margin: 1em auto 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* line 97, style.scss */
+#previous, #next {
+  position: absolute;
+  position: absolute;
+  top: 50%;
+  margin-top: auto;
+  margin-bottom: auto;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 3;
+  transition: border 1s, opacity 1s;
+}
+/* line 102, style.scss */
+#previous:hover, #next:hover {
+  cursor: pointer;
+}
+/* line 105, style.scss */
+#previous.hide, #next.hide {
+  opacity: 0;
+}
+/* line 107, style.scss */
+#previous.hide:hover, #next.hide:hover {
+  cursor: auto;
+}
+
+/* line 112, style.scss */
+#previous {
+  display: inline-block;
+  height: 0;
+  width: 0;
+  -webkit-transform: rotate(360deg);
+  border-width: 2.5em 5em;
+  border-style: solid;
+  border-color: transparent;
+  border-right-color: #14384b;
+  border-left-width: 0;
+  left: 1em;
+}
+/* line 119, style.scss */
+#previous:hover {
+  display: inline-block;
+  height: 0;
+  width: 0;
+  -webkit-transform: rotate(360deg);
+  border-width: 2.5em 5em;
+  border-style: solid;
+  border-color: transparent;
+  border-right-color: #091a23;
+  border-left-width: 0;
+}
+
+/* line 128, style.scss */
+#next {
+  display: inline-block;
+  height: 0;
+  width: 0;
+  -webkit-transform: rotate(360deg);
+  border-width: 2.5em 5em;
+  border-style: solid;
+  border-color: transparent;
+  border-left-color: #14384b;
+  border-right-width: 0;
+  right: 1em;
+}
+/* line 135, style.scss */
+#next:hover {
+  display: inline-block;
+  height: 0;
+  width: 0;
+  -webkit-transform: rotate(360deg);
+  border-width: 2.5em 5em;
+  border-style: solid;
+  border-color: transparent;
+  border-left-color: #091a23;
+  border-right-width: 0;
+}

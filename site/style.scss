@@ -1,0 +1,142 @@
+@import "scut";
+
+$main_color: #1F5673;
+
+@mixin zindex($height) {
+	@if $height == under {
+		z-index: -1;
+	}
+	@if $height == normal {
+		z-index: 1;
+	}
+	@if $height == above {
+		z-index: 2;
+	}
+	@if $height == top {
+		z-index: 3;
+	}
+}
+
+html {
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	background: $main_color;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+}
+
+h1 {
+	font-family: 'Raleway', sans-serif;
+	font-size: 2.618em;
+}
+
+header {
+	display: block;
+	background: darken($main_color, 10%);
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+	padding: 1em;
+	h1 {
+		margin: 0;
+		color: lighten($main_color, 75%);
+	}
+	small {
+		font-size: 0.5em;
+		@media all and (max-width: 700px) {
+			display: block;
+		}
+	}
+	a {
+		color: lighten($main_color, 75%);
+		text-decoration: none;
+		transition: color 1s;
+		&:hover {
+			color: lighten($main_color, 50%);
+		}
+	}
+}
+
+#github {
+	position: absolute;
+	top: 0;
+	right: 0;
+	border: 0;
+	@media all and (max-width: 1400px) {
+		display: none;
+	}
+}
+
+section {
+	display: block;
+	position: absolute;
+	width: 100%;
+	.description {
+		padding: 1em;
+		margin: auto;
+		max-width: 1213.5px
+	}
+	transition: opacity 1s;
+	&:not(.active) {
+		opacity: 0;
+	}
+}
+
+canvas {
+	display: block;
+	margin: 1em auto 0 auto;
+	position: relative;
+	@include zindex(above);
+}
+
+#previous, #next {
+	position: absolute;
+	@include scut-vcenter-tt;
+	@include zindex(top);
+	transition: border 1s, opacity 1s;
+	&:hover {
+		cursor: pointer;
+	}
+	&.hide {
+		opacity: 0;
+		&:hover {
+			cursor: auto;
+		}
+	}
+}
+#previous {
+	@include scut-triangle(
+		$direction: left,
+		$size: 5em,
+		$color: darken($main_color, 10%)
+		);
+	left: 1em;
+	&:hover {
+		@include scut-triangle(
+			$direction: left,
+			$size: 5em,
+			$color: darken($main_color, 20%)
+			);
+	}
+}
+
+#next {
+	@include scut-triangle(
+		$direction: right,
+		$size: 5em,
+		$color: darken($main_color, 10%)
+		);
+	right: 1em;
+	&:hover {
+		@include scut-triangle(
+			$direction: right,
+			$size: 5em,
+			$color: darken($main_color, 20%)
+			);
+	}
+}
