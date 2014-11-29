@@ -32,77 +32,96 @@ h1 {
 /* line 40, style.scss */
 header {
   display: block;
+  position: relative;
   background: #14384b;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   padding: 1em;
+  overflow: none;
 }
-/* line 45, style.scss */
+/* line 47, style.scss */
 header h1 {
+  position: relative;
   margin: 0;
   color: white;
+  z-index: 2;
 }
-/* line 49, style.scss */
+/* line 53, style.scss */
 header small {
   font-size: 0.5em;
 }
 @media all and (max-width: 700px) {
-  /* line 49, style.scss */
+  /* line 53, style.scss */
   header small {
     display: block;
   }
 }
-/* line 55, style.scss */
+/* line 59, style.scss */
 header a {
   color: white;
   text-decoration: none;
   transition: color 1s;
 }
-/* line 59, style.scss */
+/* line 63, style.scss */
 header a:hover {
   color: #a9d2e8;
 }
+/* line 67, style.scss */
+header canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 1s;
+}
+/* line 76, style.scss */
+header:hover canvas {
+  opacity: 1;
+}
 
-/* line 65, style.scss */
+/* line 81, style.scss */
 #github {
   position: absolute;
   top: 0;
   right: 0;
   border: 0;
+  z-index: 2;
 }
 @media all and (max-width: 1400px) {
-  /* line 65, style.scss */
+  /* line 81, style.scss */
   #github {
     display: none;
   }
 }
 
-/* line 75, style.scss */
+/* line 92, style.scss */
 section {
   display: block;
   position: absolute;
   width: 100%;
   transition: opacity 1s;
 }
-/* line 79, style.scss */
+/* line 96, style.scss */
 section .description {
   padding: 1em;
   margin: auto;
   max-width: 1213.5px;
 }
-/* line 85, style.scss */
+/* line 102, style.scss */
 section:not(.active) {
   opacity: 0;
 }
-
-/* line 90, style.scss */
-canvas {
+/* line 105, style.scss */
+section canvas {
   display: block;
   margin: 1em auto 0 auto;
   position: relative;
   z-index: 2;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
 
-/* line 97, style.scss */
+/* line 114, style.scss */
 #previous, #next {
   position: absolute;
   position: absolute;
@@ -115,20 +134,20 @@ canvas {
   z-index: 3;
   transition: border 1s, opacity 1s;
 }
-/* line 102, style.scss */
+/* line 119, style.scss */
 #previous:hover, #next:hover {
   cursor: pointer;
 }
-/* line 105, style.scss */
+/* line 122, style.scss */
 #previous.hide, #next.hide {
   opacity: 0;
 }
-/* line 107, style.scss */
+/* line 124, style.scss */
 #previous.hide:hover, #next.hide:hover {
   cursor: auto;
 }
 
-/* line 112, style.scss */
+/* line 129, style.scss */
 #previous {
   display: inline-block;
   height: 0;
@@ -141,7 +160,7 @@ canvas {
   border-left-width: 0;
   left: 1em;
 }
-/* line 119, style.scss */
+/* line 136, style.scss */
 #previous:hover {
   display: inline-block;
   height: 0;
@@ -154,7 +173,7 @@ canvas {
   border-left-width: 0;
 }
 
-/* line 128, style.scss */
+/* line 145, style.scss */
 #next {
   display: inline-block;
   height: 0;
@@ -167,7 +186,7 @@ canvas {
   border-right-width: 0;
   right: 1em;
 }
-/* line 135, style.scss */
+/* line 152, style.scss */
 #next:hover {
   display: inline-block;
   height: 0;

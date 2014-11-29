@@ -39,12 +39,16 @@ h1 {
 
 header {
 	display: block;
+	position: relative;
 	background: darken($main_color, 10%);
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 	padding: 1em;
+	overflow: none;
 	h1 {
+		position: relative;
 		margin: 0;
 		color: lighten($main_color, 75%);
+		@include zindex(above);
 	}
 	small {
 		font-size: 0.5em;
@@ -60,6 +64,18 @@ header {
 			color: lighten($main_color, 50%);
 		}
 	}
+	canvas {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		opacity: 0;
+		transition: opacity 1s;
+	}
+	&:hover canvas {
+		opacity: 1;
+	}
 }
 
 #github {
@@ -67,6 +83,7 @@ header {
 	top: 0;
 	right: 0;
 	border: 0;
+	@include zindex(above);
 	@media all and (max-width: 1400px) {
 		display: none;
 	}
@@ -85,13 +102,13 @@ section {
 	&:not(.active) {
 		opacity: 0;
 	}
-}
-
-canvas {
-	display: block;
-	margin: 1em auto 0 auto;
-	position: relative;
-	@include zindex(above);
+	canvas {
+		display: block;
+		margin: 1em auto 0 auto;
+		position: relative;
+		@include zindex(above);
+		box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+	}
 }
 
 #previous, #next {
