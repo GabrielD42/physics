@@ -74,17 +74,17 @@ class Mover {
 	}
 
 	void checkEdges() {
-		if(location.x > width) {
-			location.x = 0;
+		if(location.x > width + 25) {
+			location.x = -25;
 		}
-		else if(location.x < 0) {
-			location.x = width;
+		else if(location.x < -25) {
+			location.x = width + 25;
 		}
-		if(location.y > height) {
-			location.y = 0;
+		if(location.y > height + 25) {
+			location.y = -25;
 		}
-		else if(location.y < 0) {
-			location.y = height;
+		else if(location.y < -25) {
+			location.y = height + 25;
 		}
 	}
 

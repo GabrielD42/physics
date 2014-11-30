@@ -15,7 +15,6 @@ class Particle {
 	void update() {
 		velocity.add(acceleration);
 		location.add(velocity);
-		// println(acceleration);
 		acceleration.mult(0);
 	}
 
