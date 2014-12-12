@@ -4,8 +4,8 @@ layout: default
 <section>
 <div class="description">
 	<{% for simulation in site.posts reversed %}div class="box">
-    <a href="{{ simulation.url }}">
-      <img src="{{ simulation.image }}" />
+    <a href="{{ site.baseurl }}{{ simulation.url }}">
+      <img src="{{ site.baseurl }}{{ simulation.image }}" />
       <p>{{ simulation.title }}</p>
     </a>
   </div><{% endfor %}!-- -->
