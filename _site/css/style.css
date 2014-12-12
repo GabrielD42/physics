@@ -68,14 +68,11 @@ header {
 section {
   display: block;
   position: absolute;
-  width: 100%;
-  transition: opacity 1s; }
+  width: 100%; }
   section .description {
     padding: 1em;
     margin: auto;
     max-width: 1213.5px; }
-  section:not(.active) {
-    opacity: 0; }
   section canvas {
     display: block;
     margin: 1em auto 0 auto;
@@ -93,13 +90,9 @@ section {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   z-index: 3;
-  transition: border 1s, opacity 1s; }
-  #previous:hover, #next:hover {
-    cursor: pointer; }
+  transition: border 1s; }
   #previous.hide, #next.hide {
-    opacity: 0; }
-    #previous.hide:hover, #next.hide:hover {
-      cursor: auto; }
+    display: none; }
 
 #previous {
   display: inline-block;
@@ -145,4 +138,21 @@ section {
     border-left-color: #091a23;
     border-right-width: 0; }
 
-/*# sourceMappingURL=style.css.map */
+.box {
+  width: 25%;
+  padding: 0.5em;
+  text-align: center;
+  display: inline-block; }
+  .box a {
+    text-decoration: none;
+    color: black;
+    transition: color 1s; }
+    .box a:hover {
+      color: white; }
+  .box img {
+    max-width: 100%;
+    height: auto;
+    position: relative; }
+  @media all and (max-width: 700px) {
+    .box {
+      width: 50%; } }

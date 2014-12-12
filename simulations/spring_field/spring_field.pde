@@ -1,7 +1,7 @@
 final float G = 0.0001;
 final float k = 1;
 final float m = 10000;
-final int w = 1214; // 1213.5
+final int w = 1213.5; // 1213.5
 final int h = 750;
 final int distance = 100;
 final int px = ceil(w/distance) + 3;
@@ -11,7 +11,6 @@ ArrayList<Spring> springs = new ArrayList<Spring>();
 
 void setup() {
 	size(w, h);
-	noCursor();
 
 	for(int x = 0; x < particles.length; x++) {
 		for(int y = 0; y < particles[0].length; y++) {
@@ -64,14 +63,6 @@ void display() {
 
 	for(int i = 0; i < springs.size(); i++) {
 		springs.get(i).display();
-	}
-
-	noFill();
-	float opacity = 256 / 4;
-	for(float r = 0; r < 100; r++) {
-		stroke(255, opacity);
-		ellipse(mouseX, mouseY, r, r);
-		opacity--;
 	}
 }
 

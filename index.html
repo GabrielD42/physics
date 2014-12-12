@@ -1,55 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Physics Simulations</title>
-	<link href='http://fonts.googleapis.com/css?family=Raleway:300|Roboto' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="site/style.css">
-	<script src="site/jquery.js"></script>
-	<script src="site/script.js"></script>
-	<script src="site/processing.js"></script>
-</head>
-<body>
-	<header>
-		<h1 id="site-title">Physics Simulations <small>by <a href="http://www.gabriel-damon.com" target="_blank">Gabriel Damon</a></small></h1>
-		<a href="https://github.com/GabrielD42/physics" target="_blank"><img id="github" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
-		<canvas id="header-background" data-processing-sources="particles/particles.pde"></canvas>
-	</header>
-	<div id="previous"></div>
-	<div id="next"></div>
-	<section id="n1">
-		<canvas data-processing-sources="bounce/bounce.pde"></canvas>
-		<div class="description">
-			<h1>Bouncing Ball</h1>
-			<p>A ball bouncing with loss of height and speed due to friction. Click in frame and use arrow keys to apply forces to the ball.</p>
-		</div>
-	</section>
-	<section id="n2">
-		<canvas data-processing-sources="multiple_collisions/multiple_collisions.pde"></canvas>
-		<div class="description">
-			<h1>1D Collision</h1>
-			<p>Two objects colliding on a frictionless surface. The lighter one is half the weight of the darker one. The collisions are perfectly elastic. Click to add a new block.</p>
-		</div>
-	</section>
-	<section id="n3">
-		<canvas data-processing-sources="ucm/particle.pde ucm/ucm.pde"></canvas>
-		<div class="description">
-			<h1>Uniform Circular Motion</h1>
-			<p>A ball rotating around a point under the influence of tension and gravity. When a key or the mouse is pressed, the string is cut, sending the rotating ball flying.</p>
-		</div>
-	</section>
-	<section id="n4">
-		<canvas data-processing-sources="teeter_totter/teeter_totter.pde"></canvas>
-		<div class="description">
-			<h1>Teeter Totter</h1>
-			<p>A block balanced on a teeter-totter. Use the arrow keys to move the block.</p>
-		</div>
-	</section>
-	<section id="n5">
-		<canvas data-processing-sources="spring_field/particle.pde spring_field/spring.pde spring_field/spring_field.pde"></canvas>
-		<div class="description">
-			<h1>Spring Field</h1>
-			<p>A grid of particles secured at screen's edge connected by springs. Move the mouse to attract the particles.</p>
-		</div>
-	</section>
-</body>
-</html>
+---
+layout: default
+---
+<section>
+<div class="description">
+	<{% for simulation in site.posts reversed %}div class="box">
+    <a href="{{ simulation.url }}">
+      <img src="{{ simulation.image }}" />
+      <p>{{ simulation.title }}</p>
+    </a>
+  </div><{% endfor %}!-- -->
+</div>
+</section>

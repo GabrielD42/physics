@@ -1,3 +1,7 @@
+---
+# Main stylesheet
+---
+
 @import "scut";
 
 $main_color: #1F5673;
@@ -98,10 +102,6 @@ section {
 		margin: auto;
 		max-width: 1213.5px
 	}
-	transition: opacity 1s;
-	&:not(.active) {
-		opacity: 0;
-	}
 	canvas {
 		display: block;
 		margin: 1em auto 0 auto;
@@ -115,15 +115,9 @@ section {
 	position: absolute;
 	@include scut-vcenter-tt;
 	@include zindex(top);
-	transition: border 1s, opacity 1s;
-	&:hover {
-		cursor: pointer;
-	}
+	transition: border 1s;
 	&.hide {
-		opacity: 0;
-		&:hover {
-			cursor: auto;
-		}
+		display: none;
 	}
 }
 #previous {
@@ -155,5 +149,28 @@ section {
 			$size: 5em,
 			$color: darken($main_color, 20%)
 			);
+	}
+}
+
+.box {
+	width: 25%;
+	padding: 0.5em;
+	text-align: center;
+	display: inline-block;
+	a {
+		text-decoration: none;
+		color: black;
+		transition: color 1s;
+		&:hover {
+			color: white;
+		}
+	}
+	img {
+		max-width: 100%;
+		height: auto;
+		position: relative;
+	}
+	@media all and (max-width: 700px) {
+		width: 50%;
 	}
 }
