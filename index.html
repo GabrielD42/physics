@@ -1,12 +1,13 @@
 ---
 layout: default
 ---
-<section>
-<div class="description">
-	<{% for simulation in site.posts reversed %}div class="box">
-    <a href="{{ site.baseurl }}{{ simulation.url }}">
-      <img src="{{ site.baseurl }}{{ simulation.image }}" />
-      <p>{{ simulation.title }}</p>
+<section class="@home">
+<div class="content">
+	<p>These simulations were built by <a href="http://gabriel-damon.com" target="_blank">Gabriel Damon</a> using <a href="http://processingjs.org/" target="_blank">ProcessingJS</a>. The concepts displayed in these simulations are based on my AP Physics course as well as the excellent book <a href="http://natureofcode.com/" target="_blank">The Nature of Code</a>. The site is built using <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> and is hosted on <a href="https://github.com/" target="_blank">Github</a>. The site is styled with <a href="http://sass-lang.com/" target="_blank">Sass</a>, assisted by <a href="http://www.csstyle.io/" target="_blank">csstyle</a> and <a href="http://davidtheclark.github.io/scut/" target="_blank">Scut</a>. All programming was done in <a href="http://www.sublimetext.com/" target="_blank">Sublime Text</a> on a Linux box running <a href="http://ubuntugnome.org/" target="_blank">Ubuntu Gnome</a>.</p>
+	<{% for simulation in site.posts reversed %}div class="thumbnail">
+    <a class="thumbnail__link" href="{{ site.baseurl }}{{ simulation.url }}">
+      <img class="thumbnail__image" src="{{ site.baseurl }}{{ simulation.image }}" />
+      <p class="thumbnail__title">{{ simulation.title }}</p>
     </a>
   </div><{% endfor %}!-- -->
 </div>

@@ -2,73 +2,61 @@
 # Main stylesheet
 ---
 
+@import "csstyle";
 @import "scut";
+@import "zindex";
+@import "boxsizing";
 
 $main_color: #1F5673;
 
-@mixin zindex($height) {
-	@if $height == under {
-		z-index: -1;
-	}
-	@if $height == normal {
-		z-index: 1;
-	}
-	@if $height == above {
-		z-index: 2;
-	}
-	@if $height == top {
-		z-index: 3;
-	}
-}
-
-html {
-	box-sizing: border-box;
-}
-*, *:before, *:after {
-	box-sizing: inherit;
-}
-
-html, body {
+@include component(body) {
 	margin: 0;
 	padding: 0;
 	background: $main_color;
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
+	h1, h2, h3, h4, h5, h6 {
+		font-family: 'Raleway', sans-serif;
+	}
+	h1 {
+		font-size: 2.618em;
+	}
+	h2 {
+		font-size: 1.618em;
+	}
+	h3, h4, h5, h6 {
+		font-size: 1em;
+	}
 }
 
-h1 {
-	font-family: 'Raleway', sans-serif;
-	font-size: 2.618em;
-}
-
-header {
+@include component(header) {
 	display: block;
 	position: relative;
 	background: darken($main_color, 10%);
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 	padding: 1em;
 	overflow: none;
-	h1 {
+	@include part(title) {
 		position: relative;
 		margin: 0;
-		color: lighten($main_color, 75%);
+		color: lighten($main_color, 70%);
 		@include zindex(above);
-	}
-	small {
-		font-size: 0.5em;
-		@media all and (max-width: 700px) {
-			display: block;
+		small {
+			font-size: 0.5em;
+			@media all and (max-width: 700px) {
+				display: block;
+			}
+		}
+		a {
+			color: lighten($main_color, 70%);
+			text-decoration: none;
+			transition: color 1s;
+			&:hover {
+				color: lighten($main_color, 50%);
+			}
 		}
 	}
-	a {
-		color: lighten($main_color, 75%);
-		text-decoration: none;
-		transition: color 1s;
-		&:hover {
-			color: lighten($main_color, 50%);
-		}
-	}
-	canvas {
+	@include part(background) {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -77,42 +65,45 @@ header {
 		opacity: 0;
 		transition: opacity 1s;
 	}
-	&:hover canvas {
+	// hack. currently no better way.
+	&:hover .header__background {
 		opacity: 1;
 	}
-}
-
-#github {
-	position: absolute;
-	top: 0;
-	right: 0;
-	border: 0;
-	@include zindex(above);
-	@media all and (max-width: 1400px) {
-		display: none;
-	}
-}
-
-section {
-	display: block;
-	position: absolute;
-	width: 100%;
-	.description {
-		padding: 1em;
-		margin: auto;
-		max-width: 1213.5px
-	}
-	canvas {
-		display: block;
-		margin: 1em auto 0 auto;
-		position: relative;
-		background: black;
+	@include part(source-code) {
+		position: absolute;
+		top: 0;
+		right: 0;
+		border: 0;
 		@include zindex(above);
-		box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+		@media all and (max-width: 1400px) {
+			display: none;
+		}
 	}
 }
 
-#previous, #next {
+@include component(content) {
+	padding: 1em;
+	margin: auto;
+	max-width: 1213.5px;
+	color: black;
+	a {
+		color: black;
+		transition: color 1s;
+		&:hover {
+			color: lighten($main_color, 70%);
+		}
+	}
+}
+@include component(simulation) {
+	display: block;
+	margin: 1em auto 0 auto;
+	position: relative;
+	background: black;
+	@include zindex(above);
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+@include component(arrow) {
 	position: absolute;
 	@include scut-vcenter-tt;
 	@include zindex(top);
@@ -120,49 +111,48 @@ section {
 	&.hide {
 		display: none;
 	}
-}
-#previous {
-	@include scut-triangle(
-		$direction: left,
-		$size: 5em,
-		$color: darken($main_color, 10%)
-		);
-	left: 1em;
-	&:hover {
+	@include option(previous) {
 		@include scut-triangle(
 			$direction: left,
 			$size: 5em,
-			$color: darken($main_color, 20%)
+			$color: darken($main_color, 10%)
 			);
+		left: 1em;
+		&:hover {
+			@include scut-triangle(
+				$direction: left,
+				$size: 5em,
+				$color: darken($main_color, 20%)
+				);
+		}
 	}
-}
-
-#next {
-	@include scut-triangle(
-		$direction: right,
-		$size: 5em,
-		$color: darken($main_color, 10%)
-		);
-	right: 1em;
-	&:hover {
+	@include option(next) {
 		@include scut-triangle(
 			$direction: right,
 			$size: 5em,
-			$color: darken($main_color, 20%)
+			$color: darken($main_color, 10%)
 			);
+		right: 1em;
+		&:hover {
+			@include scut-triangle(
+				$direction: right,
+				$size: 5em,
+				$color: darken($main_color, 20%)
+				);
+		}
 	}
 }
 
-.box {
+@include component(thumbnail) {
 	width: 25%;
 	padding: 0.5em;
 	text-align: center;
 	display: inline-block;
-	a {
+	@include part(link) {
 		text-decoration: none;
 		color: white;
 	}
-	img {
+	@include part(image) {
 		max-width: 100%;
 		height: auto;
 		position: relative;
@@ -170,11 +160,11 @@ section {
 	@media all and (max-width: 700px) {
 		width: 50%;
 	}
-	p {
+	@include part(title) {
 		opacity: 0;
 		transition: opacity 1s;
 	}
-	&:hover p {
+	&:hover .thumbnail__title {
 		opacity: 1;
 	}
 }

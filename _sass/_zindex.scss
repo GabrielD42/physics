@@ -1,0 +1,14 @@
+@mixin zindex($height) {
+	@if $height == under {
+		z-index: -1;
+	}
+	@if $height == normal {
+		z-index: 1;
+	}
+	@if $height == above {
+		z-index: 2;
+	}
+	@if $height == top {
+		z-index: 3;
+	}
+}
