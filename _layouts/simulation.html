@@ -6,7 +6,7 @@ layout: default
 <section>
 <canvas data-processing-sources="{{ page.sources | split: ' ' | join: url | prepend: url }}"></canvas>
 <div class="description">
-	<h1 style="color: red;">{{ url }}</h1>
+	<h1 style="color: red;">{{ url }} {{ baseurl }}</h1>
 	<h1 class="content">{{page.title}}</h1>
 	{{ content }}
 </div>
