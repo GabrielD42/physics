@@ -18,6 +18,8 @@ void draw() {
 	teeterTotter.display();
 }
 
+////////////////////
+
 class TeeterTotter {
 	TeeterTotter(float x_, float y_, float l_, Box b_) {
 		location = new PVector(x_, y_);
@@ -84,6 +86,8 @@ class TeeterTotter {
 	ArrayList<BoxShadow> shadows = new ArrayList<BoxShadow>();
 };
 
+////////////////////
+
 class Box {
 	Box(float x_, float w_, float h_, float m_) {
 		x = x_;
@@ -107,6 +111,8 @@ class Box {
 	}
 	float x, v, a, w, h, m;
 };
+
+////////////////////
 
 class BoxShadow {
 	BoxShadow(float x_, float w_, float h_, float tx_, float ty_, float r_) {
@@ -143,6 +149,6 @@ void keyPressed() {
 		}
 		else if(keyCode == RIGHT) {
 			teeterTotter.box.x += 2;
-		} 
+		}
 	}
 }

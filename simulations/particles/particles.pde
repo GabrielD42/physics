@@ -36,6 +36,17 @@ void draw() {
 	}
 }
 
+// comment out for not web
+function doResize() {
+	$('#header-background').width($(window).width());
+	$('#header-background').height($("header").outerHeight());
+	size($(window).width(), $("header").outerHeight());
+}
+$(window).resize(doResize);
+
+
+////////////////////
+
 class Mover {
 	Mover(float m, float x, float y, color c_) {
 		mass = m;
@@ -92,11 +103,3 @@ class Mover {
 	float mass;
 	color c;
 };
-
-// comment out for not web
-function doResize() {
-	$('#header-background').width($(window).width());
-	$('#header-background').height($("header").outerHeight());
-	size($(window).width(), $("header").outerHeight());
-}
-$(window).resize(doResize);

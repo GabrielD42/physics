@@ -2,6 +2,52 @@ boolean leftPressed = false;
 boolean rightPressed = false;
 boolean upPressed = false;
 
+Ball ball = new Ball(50, 200, 200, 5, -5, 0.0125, 3, 0.5, 30);
+
+void setup() {
+	size(1213.5, 750);
+	smooth();
+	noStroke();
+	background(0);
+}
+
+void draw() {
+	fill(0, 25);
+	rect(0, 0, width, height);
+	fill(255);
+	ball.update();
+}
+
+void keyPressed() {
+	if (key == CODED) {
+		if (keyCode == UP) {
+			upPressed = true;
+		}
+		else if (keyCode == LEFT) {
+			leftPressed = true;
+		}
+		else if (keyCode == RIGHT) {
+			rightPressed = true;
+		}
+	}
+}
+
+void keyReleased() {
+	if (key == CODED) {
+		if (keyCode == UP) {
+			upPressed = false;
+		}
+		else if (keyCode == LEFT) {
+			leftPressed = false;
+		}
+		else if (keyCode == RIGHT) {
+			rightPressed = false;
+		}
+	}
+}
+
+////////////////////
+
 class Ball {
 	public Ball(float tempDiameter, float tempX, float tempY, float tempVX, float tempVY, float tempFriction, float tempGravity, float tempThrustX, float tempThrustY) {
 		diameter = tempDiameter;
@@ -54,47 +100,3 @@ class Ball {
 	public float x, y, vx, vy, friction, gravity, thrustX, thrustY, diameter;
 	private boolean wasTouching = false;
 };
-
-Ball ball = new Ball(50, 200, 200, 5, -5, 0.0125, 3, 0.5, 30);
-
-void setup() {
-	size(1213.5, 750);
-	smooth();
-	noStroke();
-	background(0);
-}
-
-void draw() {
-	fill(0, 25);
-	rect(0, 0, width, height);
-	fill(255);
-	ball.update();
-}
-
-void keyPressed() {
-	if (key == CODED) {
-		if (keyCode == UP) {
-			upPressed = true;
-		}
-		else if (keyCode == LEFT) {
-			leftPressed = true;
-		}
-		else if (keyCode == RIGHT) {
-			rightPressed = true;
-		}
-	}
-}
-
-void keyReleased() {
-	if (key == CODED) {
-		if (keyCode == UP) {
-			upPressed = false;
-		}
-		else if (keyCode == LEFT) {
-			leftPressed = false;
-		}
-		else if (keyCode == RIGHT) {
-			rightPressed = false;
-		}
-	}
-}

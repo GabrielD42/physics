@@ -1,7 +1,7 @@
 ---
 layout: simulation
 image: /img/teeter-totter.png
-sources: /simulations/teeter_totter/teeter_totter.pde
+source: /physics/simulations/teeter_totter/teeter_totter.pde
 title: Teeter Totter
 ---
 
