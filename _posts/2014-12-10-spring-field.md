@@ -1,7 +1,7 @@
 ---
 layout: simulation
 image: /img/spring-field.png
-source: /physics/simulations/spring_field/spring_field.pde
+source: /simulations/spring_field/spring_field.pde
 title: Spring Field
 ---
 
