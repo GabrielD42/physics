@@ -77,6 +77,7 @@ section {
     display: block;
     margin: 1em auto 0 auto;
     position: relative;
+    background: black;
     z-index: 2;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); }
 
@@ -145,10 +146,7 @@ section {
   display: inline-block; }
   .box a {
     text-decoration: none;
-    color: black;
-    transition: color 1s; }
-    .box a:hover {
-      color: white; }
+    color: white; }
   .box img {
     max-width: 100%;
     height: auto;
@@ -156,3 +154,8 @@ section {
   @media all and (max-width: 700px) {
     .box {
       width: 50%; } }
+  .box p {
+    opacity: 0;
+    transition: opacity 1s; }
+  .box:hover p {
+    opacity: 1; }
