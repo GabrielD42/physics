@@ -3,7 +3,7 @@ layout: default
 ---
 
 {% assign url = {{ baseurl }} | prepend: ' ' %}
-
+{{ url }}
 <section>
 <canvas data-processing-sources="{{ page.sources | split: ' ' | join: url | prepend: url }}"></canvas>
 <div class="description">
