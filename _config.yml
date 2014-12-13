@@ -1,2 +1,4 @@
 permalink: /:title/
 baseurl: /physics
+sass:
+  style: compressed

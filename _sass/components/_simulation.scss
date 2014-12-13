@@ -1,0 +1,8 @@
+@include component(simulation) {
+	display: block;
+	margin: 1em auto 0 auto;
+	position: relative;
+	background: $black;
+	@include zindex(above);
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}

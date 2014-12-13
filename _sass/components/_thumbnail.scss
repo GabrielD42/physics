@@ -1,0 +1,31 @@
+@include component(thumbnail) {
+	width: 25%;
+	padding: 0.5em;
+	text-align: center;
+	display: inline-block;
+	@include part(link) {
+		text-decoration: none;
+	}
+	@include part(image) {
+		max-width: 100%;
+		height: auto;
+		opacity: 0.5;
+		transition: opacity $time;
+	}
+	@media all and (max-width: 700px) {
+		width: 50%;
+	}
+	@include part(title) {
+		color: $white;
+		opacity: 0;
+		transition: opacity $time;
+	}
+	&:hover {
+		.thumbnail__image {
+			opacity: 1;
+		}
+		.thumbnail__title {
+			opacity: 1;
+		}
+	}
+}

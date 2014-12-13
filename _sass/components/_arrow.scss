@@ -1,0 +1,39 @@
+@include component(arrow) {
+	position: absolute;
+	@include scut-vcenter-tt;
+	@include zindex(top);
+	transition: border $time;
+	&.hide {
+		display: none;
+	}
+	@include option(previous) {
+		@include scut-triangle(
+			$direction: left,
+			$size: 5em,
+			$color: $secondary_color
+			);
+		left: 1em;
+		&:hover {
+			@include scut-triangle(
+				$direction: left,
+				$size: 5em,
+				$color: $black
+				);
+		}
+	}
+	@include option(next) {
+		@include scut-triangle(
+			$direction: right,
+			$size: 5em,
+			$color: $secondary_color
+			);
+		right: 1em;
+		&:hover {
+			@include scut-triangle(
+				$direction: right,
+				$size: 5em,
+				$color: $black
+				);
+		}
+	}
+}

@@ -1,0 +1,51 @@
+@include component(header) {
+	display: block;
+	position: relative;
+	background: $secondary_color;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+	padding: 1em;
+	overflow: none;
+	@include part(title) {
+		position: relative;
+		margin: 0;
+		color: $white;
+		@include zindex(above);
+		small {
+			font-size: 0.5em;
+			@media all and (max-width: 700px) {
+				display: block;
+			}
+		}
+		a {
+			color: $white;
+			text-decoration: none;
+			transition: color $time;
+			&:hover {
+				color: lighten($main_color, 50%);
+			}
+		}
+	}
+	@include part(background) {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		opacity: 0;
+		transition: opacity $time;
+	}
+	// hack. currently no better way.
+	&:hover .header__background {
+		opacity: 1;
+	}
+	@include part(source-code) {
+		position: absolute;
+		top: 0;
+		right: 0;
+		border: 0;
+		@include zindex(above);
+		@media all and (max-width: 1400px) {
+			display: none;
+		}
+	}
+}

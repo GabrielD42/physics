@@ -1,0 +1,13 @@
+@include component(content) {
+	padding: 1em;
+	margin: auto;
+	max-width: 1213.5px;
+	color: $black;
+	a {
+		color: $black;
+		transition: color $time;
+		&:hover {
+			color: $white;
+		}
+	}
+}
