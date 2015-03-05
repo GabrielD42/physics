@@ -1,4 +1,4 @@
 physics
 =======
 
-Physics simulations written in processing. [http://gabrield42.github.io/physics/](http://gabrield42.github.io/physics/)
+Physics simulations written in processing. [http://physics.gabriel-damon.com/](http://physics.gabriel-damon.com/)
