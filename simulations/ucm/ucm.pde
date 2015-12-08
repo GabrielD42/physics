@@ -5,7 +5,8 @@ PVector c; // center
 boolean cut = false;
 
 void setup() {
-	size(1213.5, 750);
+	// size(1213.5, 750);
+	size(1214, 750);
   c = new PVector(width/2, height/2);
   p = new Particle(1, c.x + 200, c.y, 0, 10, color(255));
   g = new PVector(0, 0.5 * p.mass);
@@ -14,6 +15,7 @@ void setup() {
 
 void draw() {
 	fill(color(0, 256 / 4));
+	noStroke();
 	rect(0, 0, width, height);
 	// find tension
 	t = PVector.sub(c, p.location);

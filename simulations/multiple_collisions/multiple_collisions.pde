@@ -1,9 +1,10 @@
 int block_width = 50;
 
-ArrayList blocks = new ArrayList();
+ArrayList<Block> blocks = new ArrayList<Block>();
 
 void setup() {
-	size(1213.5, 750);
+	// size(1213.5, 750);
+	size(1214, 750);
 	blocks.add(new Block(50, 50, 5, color(44, 131, 140)));
 	blocks.add(new Block(width - 150, 100, -5, color(8, 102, 104)));
 }
@@ -30,6 +31,18 @@ void draw() {
 	for(int i = 0; i < blocks.size(); i++) {
 		((Block)blocks.get(i)).display();
 	}
+
+	// center of mass
+	float com = 0;
+	float masses = 0;
+	for(Block b : blocks) {
+		com += b.x * b.m;
+		masses += b.m;
+	}
+	com /= masses;
+	stroke(0);
+	fill(255);
+	triangle(com, height / 2 + 50, com - 20, height / 2 + 100, com + 20, height / 2 + 100);
 }
 
 void mouseClicked() {
