@@ -6,7 +6,7 @@ void setup() {
 	size(1213.5, 750);
 	rectMode(CENTER);
 
-	teeterTotter = new TeeterTotter(width / 2, height / 2, 500, new Box(0, 20, 20, 0.5));
+	teeterTotter = new TeeterTotter(width / 2, height / 2, 500, new Box(0, 20, 20, 1));
 }
 
 void draw() {
@@ -122,7 +122,8 @@ class BoxShadow {
 		tx = tx_;
 		ty = ty_;
 		r = r_;
-		o = 255;
+		// o = 255;
+		o = 128;
 	}
 	boolean dead() {
 		return o <= 0;
