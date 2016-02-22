@@ -37,7 +37,7 @@ void draw() {
 	}
 }
 
-// comment out for not web
+comment out for not web
 function doResize() {
 	$('#header-background').width($(window).width());
 	$('#header-background').height($("header").outerHeight());

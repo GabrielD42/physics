@@ -1,6 +1,6 @@
 ---
 layout: simulation
-image: /img/spring-field.png
+image: /resources/spring-field.png
 source: /simulations/spring_field/spring_field.pde
 title: Spring Field
 ---

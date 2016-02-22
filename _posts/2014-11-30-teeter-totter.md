@@ -1,6 +1,6 @@
 ---
 layout: simulation
-image: /img/teeter-totter.png
+image: /resources/teeter-totter.png
 source: /simulations/teeter_totter/teeter_totter.pde
 title: Teeter Totter
 ---

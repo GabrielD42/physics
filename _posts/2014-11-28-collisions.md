@@ -1,6 +1,6 @@
 ---
 layout: simulation
-image: /img/collisions.png
+image: /resources/collisions.png
 source: /simulations/multiple_collisions/multiple_collisions.pde
 title: 1D Collisions
 ---
